@@ -22,7 +22,6 @@ for (var i = 3; i < nodeArgs.length; i++) {
           else {
             artist += nodeArgs[i];
           }
-          console.log("artist is " + artist); //console testing
     } 
     // determine song title for spotify api
     else if (nodeQuery === "spotify-this-song") {
@@ -32,7 +31,6 @@ for (var i = 3; i < nodeArgs.length; i++) {
           else {
             song += nodeArgs[i];
           }
-          console.log("song title is " + song); //console testing
     }
     // determine movie title for omdb api
     else if (nodeQuery === "movie-this") {
@@ -42,7 +40,6 @@ for (var i = 3; i < nodeArgs.length; i++) {
           else {
             movie += nodeArgs[i];
           }
-          console.log("movie title is " + movie); //console testing
 
     }
 }
@@ -50,13 +47,20 @@ for (var i = 3; i < nodeArgs.length; i++) {
 // query urls for each type of request
 var bandsUrl = "https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp";
 var songUrl = "";
-var movieUrl =  "http://www.omdbapi.com/?t=" + movie + "&y=&plot=short&apikey=trilogy";
+var movieUrl =  "http://www.omdbapi.com/?t=" + movie + "&y=&plot=short&tomatoes=true&apikey=trilogy";
 
 // This line is just to help us debug against the actual URL.
-console.log(movieUrl);
+// console.log(movieUrl);
 
 axios.get(movieUrl).then(
   function(response) {
-    console.log("movie details: " + response.data);
+    console.log("Movie title: " + response.data.Title);
+    console.log("Released: " + response.data.Year);
+    console.log("imdb Rating: " + response.data.imdbRating);
+    console.log("Rotten Tomatoes rating: " + response.data.tomatoRating);
+    console.log("Country: " + response.data.Country);    
+    console.log("Language: " + response.data.Language);
+    console.log("Plot: " + response.data.Plot);
+    console.log("Actors: " + response.data.Actors);
   }
 );
