@@ -13,7 +13,7 @@ var movie = "";
 
 // loop through all node process.argv after 2 (the command of which query to run)
 // add required join character between each word for query url
-for (var i = 3; i < nodeArgs.length; i++) {
+for (var i = 3; i <= nodeArgs.length; i++) {
 
     // determine artist for bandsintown api
     if (nodeQuery == "concert-this") {
@@ -28,7 +28,7 @@ for (var i = 3; i < nodeArgs.length; i++) {
         axios.get(bandsUrl).then(
           function(response) {
             for (i = 0; i < response.data.length; i++) {
-              console.log("See " + artist + " at " + response.data[i].venue.name);
+              console.log("See " + response.data[i].lineup + " at " + response.data[i].venue.name);
               if (response.data[i].venue.region != "") {
                 console.log("Location: " + response.data[i].venue.city + ", " + response.data[i].venue.region + ", " + response.data[i].venue.country);
               } else {
@@ -46,17 +46,20 @@ for (var i = 3; i < nodeArgs.length; i++) {
         if (i > 3 && i < nodeArgs.length) {
             song = song + "%20" + nodeArgs[i];
           }
-          else {
+          else if (i > 3 && nodeArgs.length == 4) {
             song += nodeArgs[i];
+          }
+          else if (nodeArgs.length == 3) {
+            song = "the%20sign";
           }
         spotify
           .request("https://api.spotify.com/v1/search?q=" + song + "&type=track")
           .then(function(data) {
-            console.log(data);
             for (i = 0; i < data.tracks.items.length; i++) {
-              console.log("Album title: " + data.tracks.items[i].album.name);
-              console.log("Artist: " + data.tracks.items[i].album.artists.name);
               console.log("Song title: " + data.tracks.items[i].name);
+              console.log("Artist: " + data.tracks.items[i].artists.name);
+              console.log("Album title: " + data.tracks.items[i].album.name);
+              console.log("Preview the song at: " + data.tracks.items[i].external_urls.spotify);
             }
  
           })
@@ -69,8 +72,12 @@ for (var i = 3; i < nodeArgs.length; i++) {
         if (i > 3 && i < nodeArgs.length) {
             movie = movie + "+" + nodeArgs[i];
           }
-          else {
+          else if (i > 3 && nodeArgs.length == 4) {
             movie += nodeArgs[i];
+          } 
+          else if (nodeArgs.length == 3) {
+            movie = "mr+nobody";
+            console.log("Since you didn't select a movie we recommend Mr. Nobody.");
           }
         // query omdb api
         var movieUrl =  "http://www.omdbapi.com/?t=" + movie + "&y=&plot=short&tomatoes=true&apikey=trilogy";
