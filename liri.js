@@ -25,15 +25,21 @@ function concertThis() {
     var bandsUrl = "https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp";
     axios.get(bandsUrl).then(
         function(response) {
-        for (i = 0; i < response.data.length; i++) {
-            console.log("See " + response.data[i].lineup + " at " + response.data[i].venue.name);
-            if (response.data[i].venue.region != "") {
-            console.log("Location: " + response.data[i].venue.city + ", " + response.data[i].venue.region + ", " + response.data[i].venue.country);
-            } else {
-            console.log("Location: " + response.data[i].venue.city + ", " + response.data[i].venue.country);
-            }
-            console.log("Date: " + moment(response.data[i].datetime).format('MM/DD/YYYY'));
-        }
+          for (i = 0; i < response.data.length; i++) {
+              console.log("See " + response.data[i].lineup + " at " + response.data[i].venue.name);
+              if (response.data[i].venue.region != "") {
+              console.log("Location: " + response.data[i].venue.city + ", " + response.data[i].venue.region + ", " + response.data[i].venue.country);
+              } else {
+              console.log("Location: " + response.data[i].venue.city + ", " + response.data[i].venue.country);
+              }
+              console.log("Date: " + moment(response.data[i].datetime).format('MM/DD/YYYY'));
+              console.log("______________________________________");
+
+              // append data to log.txt file
+              fs.appendFile("log.txt", "See " + response.data[i].lineup + " at " + response.data[i].venue.name + "\nLocation: " + response.data[i].venue.city + ", " + response.data[i].venue.country + "\nDate: " + moment(response.data[i].datetime).format('MM/DD/YYYY') + "\n______________________________________" + "\n", (err) => {
+                if (err) throw err;
+              });
+          }
         }
     ).catch(error => {
         console.log(error)
@@ -62,6 +68,12 @@ function spotifyThis() {
           console.log("Artist: " + data.tracks.items[i].artists[0].name);
           console.log("Album title: " + data.tracks.items[i].album.name);
           console.log("Preview the song at: " + data.tracks.items[i].external_urls.spotify);
+          console.log("______________________________________");
+
+          // append song info to log.txt file
+          fs.appendFile("log.txt", "Song title: " + data.tracks.items[i].name + "\nArtist: " + data.tracks.items[i].artists[0].name + "\nAlbum title: " + data.tracks.items[i].album.name + "\nPreview the song at: " + data.tracks.items[i].external_urls.spotify + "\n______________________________________\n", (err) => {
+            if (err) throw err;
+          });
         }
 
       })
@@ -72,8 +84,8 @@ function spotifyThis() {
 
 // function for movie-this using omdb api query
 function movieThis() {
-    for (i = 3; i <= search.length; i++) {
-        if (i > 3 && i < search.length) {
+    for (i = 3; i < search.length; i++) {
+        if (i > 3 && i <= search.length) {
             movie = movie + "+" + search[i];
           }
           else if (i > 3 && search.length == 4) {
@@ -81,7 +93,7 @@ function movieThis() {
           } 
           else if (search.length == 3) {
             movie = "mr+nobody";
-            console.log("Since you didn't select a movie we recommend Mr. Nobody.");
+            console.log("Since you didn't select a movie we recommend Mr. Nobody. It's on NetFlix.");
           }
           var movieUrl =  "http://www.omdbapi.com/?t=" + movie + "&y=&plot=short&tomatoes=true&apikey=trilogy";
             axios.get(movieUrl).then(
@@ -94,6 +106,11 @@ function movieThis() {
                 console.log("Language: " + response.data.Language);
                 console.log("Plot: " + response.data.Plot);
                 console.log("Actors: " + response.data.Actors);
+
+                // append movie info to log.txt file
+                fs.appendFile("log.txt", "Movie title: " + response.data.Title + "\nReleased: " + response.data.Year + "\nimdb Rating: " + response.data.imdbRating + "\nRotten Tomatoes rating: " + response.data.tomatoRating + "\nCountry: " + response.data.Country + "\nLanguage: " + response.data.Language + "\nPlot: " + response.data.Plot + "\nActors: " + response.data.Actors + "\n", (err) => {
+                  if (err) throw err;
+                });
               }
             )
     }
@@ -107,6 +124,19 @@ function doThis() {
         } else {
           var dataArr = data.split(",");
           console.log(dataArr)
+          for (i = 0; i < dataArr.length; i++) {
+            if (dataArr[i] == "spotify-this-song") {
+              song = dataArr[i++]
+              spotifyThis();
+            } else if (dataArr[i] == "movie-this") {
+              movie = dataArr[i++];
+              movieThis();
+            } else if (dataArr[i] == "concert-this") {
+              artist = [dataArr[i++]];
+              concertThis();
+            }
+
+          }
         }
       });
 
@@ -120,4 +150,6 @@ if (command == "concert-this") {
     movieThis();
 } else if (command == "do-what-it-says") {
     doThis();
+} else {
+  console.log("Sorry I didn't understand that command. Use one of these: concert-this, movie-this, spotify-this-song, do-what-it-says")
 }
