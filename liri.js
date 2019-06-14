@@ -48,11 +48,10 @@ function concertThis() {
         } else {
         console.log("Location: " + response.data[i].venue.city + ", " + response.data[i].venue.country);
         }
-        console.log("Date: " + moment(response.data[i].datetime).format('MM/DD/YYYY'));
-        console.log("______________________________________");
+        console.log("Date: " + moment(response.data[i].datetime).format('MM/DD/YYYY') + "\n______________________________________\n\n");
 
         // append data to log.txt file
-        fs.appendFile("log.txt", "See " + response.data[i].lineup + " at " + response.data[i].venue.name + "\nLocation: " + response.data[i].venue.city + ", " + response.data[i].venue.country + "\nDate: " + moment(response.data[i].datetime).format('MM/DD/YYYY') + "\n______________________________________" + "\n", (err) => {
+        fs.appendFile("log.txt", "See " + response.data[i].lineup + " at " + response.data[i].venue.name + "\nLocation: " + response.data[i].venue.city + ", " + response.data[i].venue.country + "\nDate: " + moment(response.data[i].datetime).format('MM/DD/YYYY') + "\n______________________________________\n\n", (err) => {
           if (err) throw err;
         });
       }
@@ -68,14 +67,10 @@ function spotifyThis() {
     .request("https://api.spotify.com/v1/search?q=" + song + "&type=track")
     .then(function(data) {
       for (i = 0; i < data.tracks.items.length; i++) {
-        console.log("Song title: " + data.tracks.items[i].name);
-        console.log("Artist: " + data.tracks.items[i].artists[0].name);
-        console.log("Album title: " + data.tracks.items[i].album.name);
-        console.log("Preview the song at: " + data.tracks.items[i].external_urls.spotify);
-        console.log("______________________________________");
+        console.log("Song title: " + data.tracks.items[i].name + "\nArtist: " + data.tracks.items[i].artists[0].name + "\nAlbum title: " + data.tracks.items[i].album.name + "\nPreview the song at: " + data.tracks.items[i].external_urls.spotify + "\n______________________________________\n\n");
 
         // append song info to log.txt file
-        fs.appendFile("log.txt", "Song title: " + data.tracks.items[i].name + "\nArtist: " + data.tracks.items[i].artists[0].name + "\nAlbum title: " + data.tracks.items[i].album.name + "\nPreview the song at: " + data.tracks.items[i].external_urls.spotify + "\n______________________________________\n", (err) => {
+        fs.appendFile("log.txt", "Song title: " + data.tracks.items[i].name + "\nArtist: " + data.tracks.items[i].artists[0].name + "\nAlbum title: " + data.tracks.items[i].album.name + "\nPreview the song at: " + data.tracks.items[i].external_urls.spotify + "\n______________________________________\n\n", (err) => {
           if (err) throw err;
         });
       }
@@ -89,18 +84,10 @@ function spotifyThis() {
 function movieThis() {
     axios.get(movieUrl).then(
       function(response) {
-        console.log("Movie title: " + response.data.Title);
-        console.log("Released: " + response.data.Year);
-        console.log("imdb Rating: " + response.data.imdbRating);
-        console.log("Rotten Tomatoes rating: " + response.data.tomatoRating);
-        console.log("Country: " + response.data.Country);    
-        console.log("Language: " + response.data.Language);
-        console.log("Plot: " + response.data.Plot);
-        console.log("Actors: " + response.data.Actors);
-        console.log("______________________________________")
+        console.log("Movie title: " + response.data.Title + "\nReleased: " + response.data.Year + "\nimdb Rating: " + response.data.imdbRating + "\nRotten Tomatoes rating: " + response.data.tomatoRating + "\nCountry: " + response.data.Country + "\nLanguage: " + response.data.Language + "\nPlot: " + response.data.Plot + "\nActors: " + response.data.Actors + "\n______________________________________\n\n")
 
         // append movie info to log.txt file
-        fs.appendFile("log.txt", "Movie title: " + response.data.Title + "\nReleased: " + response.data.Year + "\nimdb Rating: " + response.data.imdbRating + "\nRotten Tomatoes rating: " + response.data.tomatoRating + "\nCountry: " + response.data.Country + "\nLanguage: " + response.data.Language + "\nPlot: " + response.data.Plot + "\nActors: " + response.data.Actors + "\n______________________________________\n", (err) => {
+        fs.appendFile("log.txt", "Movie title: " + response.data.Title + "\nReleased: " + response.data.Year + "\nimdb Rating: " + response.data.imdbRating + "\nRotten Tomatoes rating: " + response.data.tomatoRating + "\nCountry: " + response.data.Country + "\nLanguage: " + response.data.Language + "\nPlot: " + response.data.Plot + "\nActors: " + response.data.Actors + "\n______________________________________\n\n", (err) => {
           if (err) throw err;
         });
       }
