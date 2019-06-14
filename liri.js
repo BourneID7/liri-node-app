@@ -37,7 +37,7 @@ function getUrl() {
 }
 getUrl();
 
-// function for movie-this using omdb api query
+// function for concert-this using bandsintown api query
 function concertThis() {
   axios.get(bandsUrl).then(
     function(response) {
