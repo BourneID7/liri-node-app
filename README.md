@@ -10,7 +10,7 @@ Liri accepts 4 different terminal input commands and search criteria using proce
 
 An if else statement determines which of the 4 recognized commands was selected & runs the appropriate function. All other commands will display a "command not recognized" message in the console.
 
-![process.argv variables] (./images/process.png)
+![process.argv variables] (images/process.png)
 ![determine command] (images/command.png)
 
 ## Search Parameters
