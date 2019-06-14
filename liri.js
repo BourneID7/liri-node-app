@@ -7,22 +7,38 @@ var Spotify = require("node-spotify-api")
 var spotify = new Spotify(keys.spotify);
 
 var command = process.argv[2];
-var search = process.argv;
+var search = process.argv.slice(3).join("+");
 var artist = "";
 var song = "";
 var movie = "";
+var bandsUrl = "";
+var movieUrl = "";
+
+// function to get query urls
+function getUrl() {
+  if (command == "concert-this") {
+    artist = search;
+    bandsUrl = "https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp";
+
+  } else if (command == "movie-this") {
+    movie = search;
+    if (search === "") {
+        movie = "mr+nobody";
+        console.log("Since you didn't select a movie we recommend Mr. Nobody. It's on NetFlix.");
+    }
+    movieUrl =  "http://www.omdbapi.com/?t=" + movie + "&y=&plot=short&tomatoes=true&apikey=trilogy";
+  } else if (command == "spotify-this-song") {
+    song = search;
+    if (search === "") {
+      console.log("Since you didn't enter a song title you're stuck with Ace of Base. Sorry!")
+      song = "ace%20of%20base%20the%20sign";
+    }
+  }
+}
+getUrl();
 
 // function for movie-this using omdb api query
 function concertThis() {
-  for (i = 3; i < search.length; i++) {
-    if (i > 3 && i < search.length) {
-        artist = artist + "%20" + search[i];
-      }
-      else {
-        artist += search[i];
-      }
-  }
-  var bandsUrl = "https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp";
   axios.get(bandsUrl).then(
     function(response) {
       for (i = 0; i < response.data.length; i++) {
@@ -47,19 +63,7 @@ function concertThis() {
 }
 
 // function for spotify-this-song using spotify api query
-function spotifyThis(song) {
-  for (i = 3; i <= search.length; i++) {
-    if (i > 3 && i < search.length) {
-        song = song + "%20" + search[i];
-      }
-      else if (i > 3 && search.length == 4) {
-        song += search[i];
-      }
-      else if (search.length == 3) {
-        console.log("Since you didn't enter a song title you're stuck with Ace of Base. Sorry!")
-        song = "ace%20of%20base%20the%20sign";
-      }
-  }
+function spotifyThis() {
   spotify
     .request("https://api.spotify.com/v1/search?q=" + song + "&type=track")
     .then(function(data) {
@@ -83,18 +87,6 @@ function spotifyThis(song) {
 
 // function for movie-this using omdb api query
 function movieThis() {
-  for (i = 3; i <= search.length; i++) {
-    if (i > 3 && i < search.length) {
-        movie = movie + "+" + search[i];
-      }
-      else if (i > 3 && search.length == 4) {
-        movie += search[i];
-      } 
-      else if (search.length == 3) {
-        movie = "mr+nobody";
-        console.log("Since you didn't select a movie we recommend Mr. Nobody. It's on NetFlix.");
-      }
-    var movieUrl =  "http://www.omdbapi.com/?t=" + movie + "&y=&plot=short&tomatoes=true&apikey=trilogy";
     axios.get(movieUrl).then(
       function(response) {
         console.log("Movie title: " + response.data.Title);
@@ -114,7 +106,6 @@ function movieThis() {
       }
     )
   }
-}
 
 // function for do-what-it-says
 function doThis() {
@@ -123,23 +114,15 @@ function doThis() {
         console.log(error);
       } else {
         var dataArr = data.split(",");
-        console.log(dataArr)
-        for (i = 0; i < dataArr.length; i++) {
-          if (dataArr[i] == "spotify-this-song") {
-            song = dataArr[i + 1]
-            spotifyThis(dataArr[1]);
-          } else if (dataArr[i] == "movie-this") {
-            movie = dataArr[i++];
-            movieThis();
-          } else if (dataArr[i] == "concert-this") {
-            artist = [dataArr[i++]];
-            concertThis();
-          }
-        }
+        console.log(dataArr);
+        command = dataArr[0];
+        song = dataArr[1];
+        spotifyThis();        
       }
   });
 }
 
+// determine which command to run
 if (command == "concert-this") {
     concertThis();
 } else if (command == "spotify-this-song") {

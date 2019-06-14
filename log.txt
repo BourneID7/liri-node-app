@@ -2,6 +2,10 @@ See Khalid at Gila River Arena
 Location: Glendale, United States
 Date: 06/20/2019
 ______________________________________
+See Khalid at Staples Center
+Location: Los Angeles, United States
+Date: 06/25/2019
+______________________________________
 See Khalid at MGM Grand Garden Arena
 Location: Las Vegas, United States
 Date: 06/22/2019
@@ -14,10 +18,6 @@ See Khalid at Staples Center
 Location: Los Angeles, United States
 Date: 06/26/2019
 ______________________________________
-See Khalid at Staples Center
-Location: Los Angeles, United States
-Date: 06/25/2019
-______________________________________
 See Khalid at Oracle Arena
 Location: Oakland, United States
 Date: 06/28/2019
@@ -26,13 +26,13 @@ See Khalid at Golden 1 Center
 Location: Sacramento, United States
 Date: 06/29/2019
 ______________________________________
-See Khalid at Moda Center
-Location: Portland, United States
-Date: 07/01/2019
-______________________________________
 See Khalid at Rogers Place
 Location: Edmonton, Canada
 Date: 07/04/2019
+______________________________________
+See Khalid at Moda Center
+Location: Portland, United States
+Date: 07/01/2019
 ______________________________________
 See Khalid at Tacoma Dome
 Location: Tacoma, United States
@@ -251,25 +251,10 @@ Artist: Jimi Hendrix
 Album title: Electric Ladyland
 Preview the song at: https://open.spotify.com/track/2aoo2jlRnM3A0NyLQqMN2f
 ______________________________________
-Song title: All Along the Watchtower
-Artist: Jimi Hendrix
-Album title: Experience Hendrix: The Best Of Jimi Hendrix
-Preview the song at: https://open.spotify.com/track/7xdLNxZCtY68x5MAOBEmBq
-______________________________________
-Song title: All Along the Watchtower
-Artist: Bob Dylan
-Album title: John Wesley Harding
-Preview the song at: https://open.spotify.com/track/0Fnb2pfBfu0ka33d6Yki17
-______________________________________
 Song title: All Along the Watchtower - Live at Continental Airlines Arena, East Rutherford, NJ - September 1999
 Artist: Dave Matthews Band
 Album title: Listener Supported
 Preview the song at: https://open.spotify.com/track/76xbigvdKraJlrw0IupYWC
-______________________________________
-Song title: All Along the Watchtower
-Artist: Dave Mason
-Album title: Dave Mason
-Preview the song at: https://open.spotify.com/track/4LhoGywwJasfwo7IRzBT5T
 ______________________________________
 Song title: (All Along The) Watchtower - Radio Edit
 Artist: Devlin
@@ -326,34 +311,149 @@ Artist: Devlin
 Album title: Watchtower
 Preview the song at: https://open.spotify.com/track/5KIEZM0tQdhJIZABY0l1tt
 ______________________________________
-Song title: All Along the Watchtower - Live at Central Park, New York, NY - September 2003
-Artist: Dave Matthews Band
-Album title: The Central Park Concert
-Preview the song at: https://open.spotify.com/track/0AU54nX4FploMXKmfRLuld
+Song title: All Along the Watchtower
+Artist: Dave Mason
+Album title: Dave Mason
+Preview the song at: https://open.spotify.com/track/4LhoGywwJasfwo7IRzBT5T
 ______________________________________
 Song title: All Along the Watchtower - From "Sons of Anarchy"
 Artist: Billy Valentine
 Album title: All Along the Watchtower (From "Sons of Anarchy")
 Preview the song at: https://open.spotify.com/track/68NJhOPlRuePfIV0SZX1km
 ______________________________________
-Song title: All Along the Watchtower - Live at Citi Field, Queens, NY - July 2010
+Song title: All Along the Watchtower
+Artist: Jimi Hendrix
+Album title: Experience Hendrix: The Best Of Jimi Hendrix
+Preview the song at: https://open.spotify.com/track/7xdLNxZCtY68x5MAOBEmBq
+______________________________________
+Song title: All Along the Watchtower - Live at Central Park, New York, NY - September 2003
 Artist: Dave Matthews Band
-Album title: Live In New York City
-Preview the song at: https://open.spotify.com/track/7rJyidvGOefOGFCBEoBQQ5
+Album title: The Central Park Concert
+Preview the song at: https://open.spotify.com/track/0AU54nX4FploMXKmfRLuld
 ______________________________________
 Song title: All Along the Watchtower
 Artist: Afterhere
 Album title: Addict
 Preview the song at: https://open.spotify.com/track/4Oez6kdVkoBapVLH5ytPs4
 ______________________________________
-Movie title: Die Hard
-Released: 1988
-imdb Rating: 8.2
+Song title: All Along the Watchtower
+Artist: Bob Dylan
+Album title: John Wesley Harding
+Preview the song at: https://open.spotify.com/track/0Fnb2pfBfu0ka33d6Yki17
+______________________________________
+Song title: All Along the Watchtower - Live at Citi Field, Queens, NY - July 2010
+Artist: Dave Matthews Band
+Album title: Live In New York City
+Preview the song at: https://open.spotify.com/track/7rJyidvGOefOGFCBEoBQQ5
+______________________________________
+Song title: The Sign
+Artist: Ace of Base
+Album title: The Sign (US Album) [Remastered]
+Preview the song at: https://open.spotify.com/track/0hrBpAOgrt8RXigk83LLNE
+______________________________________
+Song title: All That She Wants
+Artist: Ace of Base
+Album title: The Sign (US Album) [Remastered]
+Preview the song at: https://open.spotify.com/track/6kWJvPfC4DgUpRsXKNa9z9
+______________________________________
+Song title: The Sign
+Artist: Ace of Base
+Album title: Greatest Hits
+Preview the song at: https://open.spotify.com/track/3DYVWvPh3kGwPasp7yjahc
+______________________________________
+Song title: Wheel of Fortune
+Artist: Ace of Base
+Album title: The Sign (US Album) [Remastered]
+Preview the song at: https://open.spotify.com/track/08bZOAr9YLpCLL0Jmtsgbi
+______________________________________
+Song title: Living in Danger
+Artist: Ace of Base
+Album title: The Sign (US Album) [Remastered]
+Preview the song at: https://open.spotify.com/track/5ICwDM1fzgqv7HNFUIjPyx
+______________________________________
+Song title: Don't Turn Around
+Artist: Ace of Base
+Album title: The Sign (US Album) [Remastered]
+Preview the song at: https://open.spotify.com/track/4SYMibQ93bfzOk6uzkF0dO
+______________________________________
+Song title: Happy Nation
+Artist: Ace of Base
+Album title: The Sign (US Album) [Remastered]
+Preview the song at: https://open.spotify.com/track/7fb22pjF62S9r1s1pian5K
+______________________________________
+Song title: Dancer in a Daydream
+Artist: Ace of Base
+Album title: The Sign (US Album) [Remastered]
+Preview the song at: https://open.spotify.com/track/56r15mfaTXZoGEYBe2FHur
+______________________________________
+Song title: The Sign
+Artist: Ace of Base
+Album title: Happy Nation (U.S. Version) [Remastered]
+Preview the song at: https://open.spotify.com/track/3Gxku40T2RGPqtLYpFAngP
+______________________________________
+Song title: Waiting for Magic - Total Remix 7" Version
+Artist: Ace of Base
+Album title: The Sign (US Album) [Remastered]
+Preview the song at: https://open.spotify.com/track/21ra9MgsyMTrxCvIPObFGL
+______________________________________
+Song title: Young and Proud
+Artist: Ace of Base
+Album title: The Sign (US Album) [Remastered]
+Preview the song at: https://open.spotify.com/track/6sUq6M1iKXQLZHZqefgtEq
+______________________________________
+Song title: Mr Ace - Demo 1991 Bonus Track
+Artist: Ace of Base
+Album title: The Sign (US Album) [Remastered]
+Preview the song at: https://open.spotify.com/track/6IcW0DmqcuVESqTIbgkyH8
+______________________________________
+Song title: The Sign
+Artist: Ace of Base
+Album title: The Sign (The Remixes)
+Preview the song at: https://open.spotify.com/track/3JXzEzQCYrblna7SCaegAm
+______________________________________
+Song title: The Sign - Long Version
+Artist: Ace of Base
+Album title: The Sign (The Remixes)
+Preview the song at: https://open.spotify.com/track/1csXR5Vn2SgOi7cw0lxJv8
+______________________________________
+Song title: Voulez-Vous danser
+Artist: Ace of Base
+Album title: The Sign (US Album) [Remastered]
+Preview the song at: https://open.spotify.com/track/2F71FlxVyNcoHj3MrHJF5e
+______________________________________
+Song title: The Sign - The Remix
+Artist: Ace of Base
+Album title: Classic Remixes
+Preview the song at: https://open.spotify.com/track/1FqcC4PddhouGXkd7wc40l
+______________________________________
+Song title: All That She Wants - Banghra Version
+Artist: Ace of Base
+Album title: The Sign (US Album) [Remastered]
+Preview the song at: https://open.spotify.com/track/372oGXavXzqZJp5hzXxZlu
+______________________________________
+Song title: The Sign
+Artist: Ace of Base
+Album title: The Sign (The Remixes)
+Preview the song at: https://open.spotify.com/track/2ZkiqOy0WpIXRfj1WP9fyg
+______________________________________
+Song title: My Mind - Mindless Mix
+Artist: Ace of Base
+Album title: The Sign (US Album) [Remastered]
+Preview the song at: https://open.spotify.com/track/2Ol8ieTGPnzi9kVvZ1f7IN
+______________________________________
+Song title: The Sign - Ultimix
+Artist: Ace of Base
+Album title: The Sign (The Remixes)
+Preview the song at: https://open.spotify.com/track/3sM1ncxPiL0UCBlIVkb637
+______________________________________
+Movie title: Big Trouble
+Released: 2002
+imdb Rating: 6.5
 Rotten Tomatoes rating: N/A
 Country: USA
-Language: English, German, Italian, Japanese
-Plot: An NYPD officer tries to save his wife and several others taken hostage by German terrorists during a Christmas party at the Nakatomi Plaza in Los Angeles.
-Actors: Bruce Willis, Bonnie Bedelia, Reginald VelJohnson, Paul Gleason
+Language: English
+Plot: The lives of several Miami denizens, from ad agents to gunrunners to street thugs to law enforcement to school-children, intersect with humorous and dangerous results.
+Actors: Tim Allen, Rene Russo, Stanley Tucci, Tom Sizemore
 ______________________________________
 Movie title: Mr. Nobody
 Released: 2009
@@ -363,3 +463,4 @@ Country: Belgium, Germany, Canada, France, USA, UK
 Language: English, Mohawk
 Plot: A boy stands on a station platform as a train is about to leave. Should he go with his mother or stay with his father? Infinite possibilities arise from this decision. As long as he doesn't choose, anything is possible.
 Actors: Jared Leto, Sarah Polley, Diane Kruger, Linh Dan Pham
+______________________________________
