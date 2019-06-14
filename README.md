@@ -10,13 +10,13 @@ Liri accepts 4 different terminal input commands and search criteria using proce
 
 An if else statement determines which of the 4 recognized commands was selected & runs the appropriate function. All other commands will display a "command not recognized" message in the console.
 
-![process.argv variables] (images/process.png)
-![determine command] (images/command.png)
+![process.argv variables] (process.png)
+![determine command] (command.png)
 
 ## Search Parameters
 The search criteria for each API is determined by the process.argv input starting at index 3. See screenshot above. Next the app runs a function to get the appropriate query URL based on which command was chosen & adds the search criteria to the API query url.
 
-![getting API query urls] (images/getUrl.png)
+![getting API query urls] (getUrl.png)
 
 ## Search Results 
 Liri uses Axios to get data from the API specified in the command.
@@ -24,43 +24,43 @@ Liri uses Axios to get data from the API specified in the command.
 * **Bands in Town: concert-this**
     * Axios is used to get data for the Bandsintown API. An additional if else statement is used to get the appropriate location format depending on whether or not a state/region needs to be included in the result. Moment.js is used to display the concert dates in a readable format.
 
-    ![concert-this function] (images/concert-this-function.png)
+    ![concert-this function] (concert-this-function.png)
 
     * Results from the Bandsintown API are printed to the console & appended to a log.txt file using node fs.
 
-    ![concert-this results] (images/concert-this-results.png)
+    ![concert-this results] (concert-this-results.png)
 * **Spotify: spotify-this-song**
     * This function works the same as the concertThis function above except it uses a request instead of Axios to get info from the Spotify API.
 
-    ![spotify-this-song function] (images/spotify-function.png)
+    ![spotify-this-song function] (spotify-function.png)
 
     * Results from the Spotify API are printed to the console & appended to a log.txt file using node fs.
 
-    ![spotify-this-song results] (images/spotify-results.png)
+    ![spotify-this-song results] (spotify-results.png)
 
     * If no search parameters are entered for the Spotify API LIRI returns Ace of Base results.
 
-    ![spotify-this-song default results] (images/spotify-default-results.png)
+    ![spotify-this-song default results] (spotify-default-results.png)
 
 * **OMDB: movie-this**
     * Axios is used to get data from the OMDB API.
 
-    ![movie-this function] (images/movie-function.png)
+    ![movie-this function] (movie-function.png)
 
     * Results are printed to the console & appended to the log.txt file.
 
-    ![movie-this results] (images/movie-results.png)
+    ![movie-this results] (movie-results.png)
 
     * If no search parameters are input LIRI returns results for Mr. Nobody.
 
-    ![movie-this default results] (images/movie-default-results.png)
+    ![movie-this default results] (movie-default-results.png)
 * **do-what-it-says**
     * This function uses Node fs readFile to read the text in the random.txt file. Then it is split to an array used to call the spotify function.
 
-    ![do-what-it-says function] (images/do-what-it-says-function.png)
+    ![do-what-it-says function] (do-what-it-says-function.png)
 
     * Results
 
-    ![do-what-it-says results] (images/do-what-it-says-results.png)
+    ![do-what-it-says results] (do-what-it-says-results.png)
 
 
