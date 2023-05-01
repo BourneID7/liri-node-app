@@ -1,21 +1,21 @@
 require("dotenv").config();
-var axios = require("axios");
-var moment = require("moment");
-var fs = require("fs");
-var keys = require("./keys.js");
-var Spotify = require("node-spotify-api")
-var spotify = new Spotify(keys.spotify);
+const axios = require("axios");
+const moment = require("moment");
+const fs = require("fs");
+const keys = require("./keys.js");
+const Spotify = require("node-spotify-api")
+const spotify = new Spotify(keys.spotify);
 
-var command = process.argv[2];
-var search = process.argv.slice(3).join("+");
-var artist = "";
-var song = "";
-var movie = "";
-var bandsUrl = "";
-var movieUrl = "";
+const command = process.argv[2];
+const search = process.argv.slice(3).join("+");
+let artist = "";
+let song = "";
+let movie = "";
+let bandsUrl = "";
+let movieUrl = "";
 
 // function to get query urls
-function getUrl() {
+const getUrl = () => {
   if (command == "concert-this") {
     artist = search;
     bandsUrl = "https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp";
@@ -38,9 +38,9 @@ function getUrl() {
 getUrl();
 
 // function for concert-this using bandsintown api query
-function concertThis() {
+const concertThis = () => {
   axios.get(bandsUrl).then(
-    function(response) {
+    (response) => {
       for (i = 0; i < response.data.length; i++) {
         console.log("See " + response.data[i].lineup + " at " + response.data[i].venue.name);
         if (response.data[i].venue.region != "") {
@@ -62,10 +62,10 @@ function concertThis() {
 }
 
 // function for spotify-this-song using spotify api query
-function spotifyThis() {
+const spotifyThis = () => {
   spotify
     .request("https://api.spotify.com/v1/search?q=" + song + "&type=track")
-    .then(function(data) {
+    .then((data) => {
       for (i = 0; i < data.tracks.items.length; i++) {
         console.log("Song title: " + data.tracks.items[i].name + "\nArtist: " + data.tracks.items[i].artists[0].name + "\nAlbum title: " + data.tracks.items[i].album.name + "\nPreview the song at: " + data.tracks.items[i].external_urls.spotify + "\n______________________________________\n\n");
 
@@ -75,13 +75,13 @@ function spotifyThis() {
         });
       }
     })
-    .catch(function(err) {
+    .catch((err) => {
       console.error('Error occurred: ' + err); 
     }); 
 }
 
 // function for movie-this using omdb api query
-function movieThis() {
+const movieThis = () => {
     axios.get(movieUrl).then(
       function(response) {
         console.log("Movie title: " + response.data.Title + "\nReleased: " + response.data.Year + "\nimdb Rating: " + response.data.imdbRating + "\nRotten Tomatoes rating: " + response.data.tomatoRating + "\nCountry: " + response.data.Country + "\nLanguage: " + response.data.Language + "\nPlot: " + response.data.Plot + "\nActors: " + response.data.Actors + "\n______________________________________\n\n")
@@ -95,12 +95,12 @@ function movieThis() {
   }
 
 // function for do-what-it-says
-function doThis() {
-  fs.readFile("random.txt", "utf-8", function(error, data) {
+const doThis = () => {
+  fs.readFile("random.txt", "utf-8", (error, data) => {
       if (error) {
         console.log(error);
       } else {
-        var dataArr = data.split(",");
+        const dataArr = data.split(",");
         console.log(dataArr);
         command = dataArr[0];
         song = dataArr[1];
